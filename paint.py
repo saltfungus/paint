@@ -22,11 +22,17 @@ class Paint(object):
         self.eraser_button = Button(self.root, text='Eraser', command=self.use_eraser)
         self.eraser_button.grid(row=0, column=3)
 
-	self.choose_shape_button = Button(self.root, text='Shape work in progress', command=self.choose_shape)
-	self.choose_shape_button.grid(row=0, column=4)
+        self.choose_shape_button = Button(self.root, text='Shape work in progress', command=self.choose_shape)
+        self.choose_shape_button.grid(row=0, column=4)
 
         self.choose_size_button = Scale(self.root, from_=1, to=10, orient=HORIZONTAL)
         self.choose_size_button.grid(row=0, column=5)
+
+        self.save_file_button = Button(self.root, text='Save work in progress', command=self.save_file)
+        self.save_file_button.grid(row=0, column=6)
+
+        self.open_file_button = Button(self.root, text='Open work in progress', command=self.open_file)
+        self.open_file_button.grid(row=0, column=7)
 
 
         self.c = Canvas(self.root, bg='white', width=1200, height=800)
@@ -59,6 +65,13 @@ class Paint(object):
         self.activate_button(self.eraser_button, eraser_mode=True)
 
     def choose_shape(self):
+        print("hello, world")
+
+    def save_file(self):
+        print("hello, world")
+
+    def open_file(self):
+        print("hello, world")
 
     def activate_button(self, some_button, eraser_mode=False):
         self.active_button.config(relief=RAISED)
@@ -82,3 +95,4 @@ class Paint(object):
 
 if __name__ == '__main__':
     Paint()
+
